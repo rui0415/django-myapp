@@ -15,14 +15,15 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=iniad
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=rui
+      - POSTGRES_PASSWORD=rui@0415
       - POSTGRES_DB=testdb
 
   nginx:
     image: nginx:latest
+    container_name: mynginx
     ports:
-      - 8080:80
+      - 80:80
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - ./src/collected_static:/static
